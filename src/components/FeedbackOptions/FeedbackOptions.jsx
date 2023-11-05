@@ -1,27 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import css from './FeedbackOptions.module.css';
+
+import { BtnList, Btn } from './FeedbackOptions.styled';
 
 export default function FeedbackOptions({ onLeaveFeedback, options }) {
   return (
     <>
       <div>
-        <ul className={css.btnList}>
+        <BtnList>
           {options.map(key => {
             return (
               <li key={key}>
-                <button
-                  className={css.btn}
-                  value={key}
-                  onClick={() => onLeaveFeedback(key)}
-                >
+                <Btn value={key} onClick={() => onLeaveFeedback(key)}>
                   {key.charAt(0).toUpperCase()}
                   {key.slice(1)}
-                </button>
+                </Btn>
               </li>
             );
           })}
-        </ul>
+        </BtnList>
       </div>
     </>
   );

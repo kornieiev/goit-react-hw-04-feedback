@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 
-import Statistics from './Statistics/Statistics';
-import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
-import Section from './Section/Section';
-import Notification from './Notification/Notification';
+import Statistics from '../Statistics/Statistics';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+import Section from '../Section/Section';
+import Notification from '../Notification/Notification';
 
-import css from './App.module.css';
+import { MainWrap } from './App.styled';
 
 export default function App() {
   const [good, setGood] = useState(0);
@@ -49,7 +49,7 @@ export default function App() {
 
   return (
     <>
-      <div className={css.mainBox}>
+      <MainWrap>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(options)}
@@ -69,7 +69,7 @@ export default function App() {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </div>
+      </MainWrap>
     </>
   );
 }
